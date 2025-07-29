@@ -12,14 +12,16 @@
   <div class="container py-4">
     <h1 class="mb-4">Dev Blog Admin</h1>
 
-    <button class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#postModal">
+    <button class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#postModal" type="button" aria-label="Add a Blog Post">
       Add a Blog Post
     </button>
     <div class="row mb-3">
       <div class="col-md-6 mb-2 mb-md-0">
+        <label for="searchInput" class="form-label visually-hidden">Search by title</label>
         <input id="searchInput" type="text" class="form-control" placeholder="Search by title..." />
       </div>
       <div class="col-md-6">
+        <label for="sortSelect" class="form-label visually-hidden">Sort Posts</label>
         <select id="sortSelect" class="form-select">
           <option value="newest" selected>Sort by Date: Newest First</option>
           <option value="oldest">Sort by Date: Oldest First</option>
@@ -31,8 +33,8 @@
     <hr />
     <footer class="mt-5">
       <a href="imgs/wireframe.png" target="_blank">Wireframe</a> |
-      <a href="https://validator.w3.org/" target="_blank">Nu HTML</a> |
-      <a href="https://wave.webaim.org/" target="_blank">Wave</a> |
+      <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fsaxonys.github.io%2Fdev-blog-admin%2F" target="_blank">Nu HTML</a> |
+      <a href="https://wave.webaim.org/report#/https://saxonys.github.io/dev-blog-admin/" target="_blank">Wave</a> |
       <a href="https://github.com/saxonys/dev-blog-admin" target="_blank">Source Code</a>
     </footer>
   </div>
@@ -41,14 +43,26 @@
     <div class="modal-dialog">
       <form id="postForm" class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Add New Post</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          <h5 class="modal-title" id="postModalLabel">Add New Post</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <input type="text" id="title" class="form-control mb-2" placeholder="Title" required />
-          <input type="date" id="date" class="form-control mb-2" required />
-          <textarea id="content" class="form-control mb-2" rows="4" placeholder="Content" required></textarea>
-          <input type="text" id="tags" class="form-control" placeholder="Tags (comma-separated)" />
+          <div class="mb-2">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" id="title" class="form-control" placeholder="Title" required />
+          </div>
+          <div class="mb-2">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" id="date" class="form-control" required />
+          </div>
+          <div class="mb-2">
+            <label for="content" class="form-label">Content</label>
+            <textarea id="content" class="form-control" rows="4" placeholder="Content" required></textarea>
+          </div>
+          <div>
+            <label for="tags" class="form-label">Tags (comma-separated)</label>
+            <input type="text" id="tags" class="form-control" placeholder="Tags (comma-separated)" />
+          </div>
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-success">Save Post</button>
@@ -61,7 +75,7 @@
     <div id="toast" class="toast text-bg-success" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="d-flex">
         <div class="toast-body">Added blog post!</div>
-        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
     </div>
   </div>

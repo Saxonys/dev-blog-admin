@@ -4,7 +4,7 @@ A simple blog admin app for viewing and temporarily adding blog posts. This repo
 
 ## 🔗 Live App
 
-[👉 View the Developer Blog](https://yourusername.github.io/your-repo-name/)
+[👉 View the Developer Blog](https://saxonys.github.io/dev-blog-admin/)
 
 ---
 
@@ -24,7 +24,7 @@ A simple blog admin app for viewing and temporarily adding blog posts. This repo
 
 ---
 
-## 🔌 Data Fetch Example (No CORS)
+## 🔌 Data Fetch Example
 
 ```js
 async function loadPosts() {

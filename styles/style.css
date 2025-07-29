@@ -9,4 +9,7 @@ body {
   #searchInput, #sortSelect {
     max-width: 250px;
   }
-  
+  a {
+    color: #333;
+    text-decoration: underline;
+  }
